@@ -122,8 +122,8 @@ service network restart       --重启网络服务
 一.命令的基本格式
 
 1. 命令的提示符
+[root@localhost ~]#
 
-* [root@localhost ~]#
 * []:分隔符
 * root：当前登录用户
 * @：分隔符
