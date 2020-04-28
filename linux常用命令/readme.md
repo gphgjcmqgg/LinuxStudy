@@ -189,3 +189,38 @@ mv [选项] 源文件 目标文件
   -f：强制覆盖
 
 mv命令        除了移动文件还有重命名文件的作用(文件在同一目录下用mv就是改名)
+
+## 帮助命令
+
+### man命令
+
+man命令是最常见的帮助命令
+
+### info命令
+
+info是一套完整帮助的资料
+
+### help命令
+
+help只能获取Shell内置命令的帮助
+
+### --help选项
+
+ls --help
+
+## 搜索命令
+
+### whereis
+
+whereis命令可以查找到二进制命令，和帮助文档的位置
+
+### which
+
+which命令可以查找到二进制命令，和这个命令的别名
+系统中有哪些别名 用命令alias
+
+### locate
+
+locate命令可以按照文件名搜索普通文件的命令
+优点：按照数据库搜索，速度快，消耗资源少，数据库位置/var/lib/mlocate/mlocate.db
+强制更新数据库命令updatedb，配置文件位置/etc/updatedb.conf
