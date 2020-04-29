@@ -224,3 +224,42 @@ which命令可以查找到二进制命令，和这个命令的别名
 locate命令可以按照文件名搜索普通文件的命令
 优点：按照数据库搜索，速度快，消耗资源少，数据库位置/var/lib/mlocate/mlocate.db
 强制更新数据库命令updatedb，配置文件位置/etc/updatedb.conf
+
+### find命令
+
+find 搜索路径 [选项] 搜索内容
+find . -name abc
+
+选项：
+1. -name      按照文件名搜索
+2. -iname     忽略大小写按照文件名搜索
+3. -inum      根据inode查找文件
+4. -size  （+/-）(k,M,c)
+find . -size +28k       --查找文件大小大于28k的文件
+find . -size 5c         --查找文件大小5字节的文件
+5. -atime   -mtime   -ctime (文件访问时间、文件数据修改时间、文件状态修改时间)  单位时间是天
+  -5          --代表5天内修改的文件
+  5           --代表前5~6天那一天修改的文件
+  +5          --代表6天前修改的文件
+
+6. -perm 644 按照权限查找  
+7. -user 用户名   -group 组名     按照所有者和所属组查找
+8. -nouser          --查找没有所有者的文件
+9. -type d          --查找目录
+   -type f          --查找普通文件
+   -type l          --查找软链接文件
+10. -a      and逻辑与       -o        or逻辑或        -not       not逻辑非
+find . -size +1k -a -type f
+11. -exec 选项          命令1的结果 由命令2再操作
+find 搜索路径 【选项】 搜索内容 -exec 命令2 {} \;
+
+### find命令和grep命令区别
+
+find命令用于在系统中搜索符合条件的文件名(完全匹配)
+grep命令用于在文件中搜索符合条件的字符串（包含匹配）
+
+### grep命令
+
+grep "123" abc
+
+
